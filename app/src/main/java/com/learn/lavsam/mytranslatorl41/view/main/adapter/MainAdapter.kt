@@ -1,12 +1,12 @@
-package geekbrains.ru.translator.view.main.adapter
+package com.learn.lavsam.mytranslatorl41.view.main.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import geekbrains.ru.translator.R
-import geekbrains.ru.translator.model.data.DataModel
-import geekbrains.ru.translator.utils.convertMeaningsToString
+import com.learn.lavsam.mytranslatorl41.R
+import com.learn.lavsam.mytranslatorl41.model.data.DataModel
+import com.learn.lavsam.mytranslatorl41.utils.convertMeaningsToString
 import kotlinx.android.synthetic.main.activity_main_recyclerview_item.view.*
 
 class MainAdapter(private var onListItemClickListener: OnListItemClickListener) :

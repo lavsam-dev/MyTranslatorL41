@@ -1,4 +1,4 @@
-package geekbrains.ru.translator.utils.ui
+package com.learn.lavsam.mytranslatorl41.utils.ui
 
 import android.app.Dialog
 import android.os.Bundle

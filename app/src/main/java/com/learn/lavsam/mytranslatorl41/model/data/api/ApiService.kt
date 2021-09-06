@@ -1,6 +1,6 @@
-package geekbrains.ru.translator.model.data.api
+package com.learn.lavsam.mytranslatorl41.model.data.api
 
-import geekbrains.ru.translator.model.data.DataModel
+import com.learn.lavsam.mytranslatorl41.model.data.DataModel
 import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
 import retrofit2.http.Query

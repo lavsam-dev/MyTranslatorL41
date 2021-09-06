@@ -1,26 +1,28 @@
-package geekbrains.ru.translator.di
+package com.learn.lavsam.mytranslatorl41.di
 
 import androidx.room.Room
+import com.learn.lavsam.mytranslatorl41.model.data.DataModel
+import com.learn.lavsam.mytranslatorl41.model.datasource.RetrofitImplementation
+import com.learn.lavsam.mytranslatorl41.model.datasource.RoomDataBaseImplementation
+import com.learn.lavsam.mytranslatorl41.model.repository.Repository
+import com.learn.lavsam.mytranslatorl41.model.repository.RepositoryImplementation
 import com.learn.lavsam.mytranslatorl41.model.repository.RepositoryImplementationLocal
 import com.learn.lavsam.mytranslatorl41.model.repository.RepositoryLocal
 import com.learn.lavsam.mytranslatorl41.room.HistoryDataBase
 import com.learn.lavsam.mytranslatorl41.view.history.HistoryInteractor
 import com.learn.lavsam.mytranslatorl41.view.history.HistoryViewModel
-import geekbrains.ru.translator.model.data.DataModel
-import geekbrains.ru.translator.model.datasource.RetrofitImplementation
-import geekbrains.ru.translator.model.datasource.RoomDataBaseImplementation
-import geekbrains.ru.translator.model.repository.Repository
-import geekbrains.ru.translator.model.repository.RepositoryImplementation
-import geekbrains.ru.translator.view.main.MainInteractor
-import geekbrains.ru.translator.view.main.MainViewModel
-import org.koin.core.qualifier.named
+import com.learn.lavsam.mytranslatorl41.view.main.MainInteractor
+import com.learn.lavsam.mytranslatorl41.view.main.MainViewModel
 import org.koin.dsl.module
 
 val application = module {
     single { Room.databaseBuilder(get(), HistoryDataBase::class.java, "HistoryDB").build() }
     single { get<HistoryDataBase>().historyDao() }
     single<Repository<List<DataModel>>> { RepositoryImplementation(RetrofitImplementation()) }
-    single<RepositoryLocal<List<DataModel>>> { RepositoryImplementationLocal(RoomDataBaseImplementation(get()))
+    single<RepositoryLocal<List<DataModel>>> {
+        RepositoryImplementationLocal(
+            RoomDataBaseImplementation(get())
+        )
     }
 }
 

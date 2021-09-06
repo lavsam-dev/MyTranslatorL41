@@ -1,10 +1,10 @@
 package com.learn.lavsam.mytranslatorl41.view.history
 
+import com.learn.lavsam.mytranslatorl41.model.data.AppState
+import com.learn.lavsam.mytranslatorl41.model.data.DataModel
+import com.learn.lavsam.mytranslatorl41.model.repository.Repository
 import com.learn.lavsam.mytranslatorl41.model.repository.RepositoryLocal
-import geekbrains.ru.translator.model.data.AppState
-import geekbrains.ru.translator.model.data.DataModel
-import geekbrains.ru.translator.model.repository.Repository
-import geekbrains.ru.translator.viewmodel.Interactor
+import com.learn.lavsam.mytranslatorl41.viewmodel.Interactor
 
 class HistoryInteractor(
     private val repositoryRemote: Repository<List<DataModel>>,

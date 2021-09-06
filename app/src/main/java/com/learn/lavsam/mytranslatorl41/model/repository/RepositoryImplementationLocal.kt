@@ -1,8 +1,8 @@
 package com.learn.lavsam.mytranslatorl41.model.repository
 
+import com.learn.lavsam.mytranslatorl41.model.data.AppState
+import com.learn.lavsam.mytranslatorl41.model.data.DataModel
 import com.learn.lavsam.mytranslatorl41.model.datasource.DataSourceLocal
-import geekbrains.ru.translator.model.data.AppState
-import geekbrains.ru.translator.model.data.DataModel
 
 class RepositoryImplementationLocal(private val dataSource: DataSourceLocal<List<DataModel>>) :
     RepositoryLocal<List<DataModel>> {

@@ -1,25 +1,28 @@
-package geekbrains.ru.translator.view.main
+package com.learn.lavsam.mytranslatorl41.view.main
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
-import android.view.View.GONE
-import android.view.View.VISIBLE
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
-import geekbrains.ru.translator.R
-import geekbrains.ru.translator.model.data.AppState
-import geekbrains.ru.translator.model.data.DataModel
-import geekbrains.ru.translator.utils.convertMeaningsToString
-import geekbrains.ru.translator.utils.network.isOnline
-import geekbrains.ru.translator.view.base.BaseActivity
-import geekbrains.ru.translator.view.descriptionscreen.DescriptionActivity
-import geekbrains.ru.translator.view.main.adapter.MainAdapter
+import com.learn.lavsam.mytranslatorl41.R
+import com.learn.lavsam.mytranslatorl41.model.data.AppState
+import com.learn.lavsam.mytranslatorl41.model.data.DataModel
+import com.learn.lavsam.mytranslatorl41.utils.convertMeaningsToString
+import com.learn.lavsam.mytranslatorl41.utils.network.isOnline
+import com.learn.lavsam.mytranslatorl41.view.base.BaseActivity
+import com.learn.lavsam.mytranslatorl41.view.descriptionscreen.DescriptionActivity
+import com.learn.lavsam.mytranslatorl41.view.history.HistoryActivity
+import com.learn.lavsam.mytranslatorl41.view.main.adapter.MainAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class MainActivity : BaseActivity<AppState, MainInteractor>() {
+private const val BOTTOM_SHEET_FRAGMENT_DIALOG_TAG = "74a54328-5d62-46bf-ab6b-cbf5fgt0-092395"
 
+class MainActivity : BaseActivity<AppState, MainInteractor>() {
     override lateinit var model: MainViewModel
+
     private val adapter: MainAdapter by lazy { MainAdapter(onListItemClickListener) }
     private val fabClickListener: View.OnClickListener =
         View.OnClickListener {
@@ -59,35 +62,22 @@ class MainActivity : BaseActivity<AppState, MainInteractor>() {
         initViews()
     }
 
-    override fun renderData(appState: AppState) {
-        when (appState) {
-            is AppState.Success -> {
-                showViewWorking()
-                val data = appState.data
-                if (data.isNullOrEmpty()) {
-                    showAlertDialog(
-                        getString(R.string.dialog_tittle_sorry),
-                        getString(R.string.empty_server_response_on_success)
-                    )
-                } else {
-                    adapter.setData(data)
-                }
+    override fun setDataToAdapter(data: List<DataModel>) {
+        adapter.setData(data)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.history_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_history -> {
+                startActivity(Intent(this, HistoryActivity::class.java))
+                true
             }
-            is AppState.Loading -> {
-                showViewLoading()
-                if (appState.progress != null) {
-                    progress_bar_horizontal.visibility = VISIBLE
-                    progress_bar_round.visibility = GONE
-                    progress_bar_horizontal.progress = appState.progress
-                } else {
-                    progress_bar_horizontal.visibility = GONE
-                    progress_bar_round.visibility = VISIBLE
-                }
-            }
-            is AppState.Error -> {
-                showViewWorking()
-                showAlertDialog(getString(R.string.error_stub), appState.error.message)
-            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 
@@ -102,19 +92,6 @@ class MainActivity : BaseActivity<AppState, MainInteractor>() {
 
     private fun initViews() {
         search_fab.setOnClickListener(fabClickListener)
-        main_activity_recyclerview.layoutManager = LinearLayoutManager(applicationContext)
         main_activity_recyclerview.adapter = adapter
-    }
-
-    private fun showViewWorking() {
-        loading_frame_layout.visibility = GONE
-    }
-
-    private fun showViewLoading() {
-        loading_frame_layout.visibility = VISIBLE
-    }
-
-    companion object {
-        private const val BOTTOM_SHEET_FRAGMENT_DIALOG_TAG = "74a54328-5d62-46bf-ab6b-cbf5fgt0-092395"
     }
 }

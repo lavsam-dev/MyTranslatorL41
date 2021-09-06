@@ -1,4 +1,4 @@
-package geekbrains.ru.translator.viewmodel
+package com.learn.lavsam.mytranslatorl41.viewmodel
 
 interface Interactor<T> {
 

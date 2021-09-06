@@ -1,4 +1,4 @@
-package geekbrains.ru.translator.view.descriptionscreen
+package com.learn.lavsam.mytranslatorl41.view.descriptionscreen
 
 import android.content.Context
 import android.content.Intent
@@ -13,11 +13,12 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
+import com.learn.lavsam.mytranslatorl41.R
+import com.learn.lavsam.mytranslatorl41.utils.network.isOnline
+import com.learn.lavsam.mytranslatorl41.utils.ui.AlertDialogFragment
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
-import geekbrains.ru.translator.R
-import geekbrains.ru.translator.utils.network.isOnline
-import geekbrains.ru.translator.utils.ui.AlertDialogFragment
+
 import kotlinx.android.synthetic.main.activity_description.*
 
 class DescriptionActivity : AppCompatActivity() {
@@ -54,8 +55,8 @@ class DescriptionActivity : AppCompatActivity() {
         if (imageLink.isNullOrBlank()) {
             stopRefreshAnimationIfNeeded()
         } else {
-            //usePicassoToLoadPhoto(description_imageview, imageLink)
-            useGlideToLoadPhoto(description_imageview, imageLink)
+            usePicassoToLoadPhoto(description_imageview, imageLink)
+            //useGlideToLoadPhoto(description_imageview, imageLink)
         }
     }
 

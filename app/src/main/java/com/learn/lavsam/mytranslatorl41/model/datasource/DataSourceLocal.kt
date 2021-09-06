@@ -1,7 +1,6 @@
 package com.learn.lavsam.mytranslatorl41.model.datasource
 
-import geekbrains.ru.translator.model.data.AppState
-import geekbrains.ru.translator.model.datasource.DataSource
+import com.learn.lavsam.mytranslatorl41.model.data.AppState
 
 interface DataSourceLocal<T> : DataSource<T> {
 

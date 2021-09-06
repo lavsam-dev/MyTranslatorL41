@@ -1,9 +1,9 @@
-package geekbrains.ru.translator.utils
+package com.learn.lavsam.mytranslatorl41.utils
 
+import com.learn.lavsam.mytranslatorl41.model.data.AppState
+import com.learn.lavsam.mytranslatorl41.model.data.DataModel
+import com.learn.lavsam.mytranslatorl41.model.data.Meanings
 import com.learn.lavsam.mytranslatorl41.room.HistoryEntity
-import geekbrains.ru.translator.model.data.AppState
-import geekbrains.ru.translator.model.data.DataModel
-import geekbrains.ru.translator.model.data.Meanings
 
 fun parseOnlineSearchResults(state: AppState): AppState {
     return AppState.Success(mapResult(state, true))
@@ -82,7 +82,6 @@ fun convertDataModelSuccessToEntity(appState: AppState): HistoryEntity? {
         else -> null
     }
 }
-
 
 fun convertMeaningsToString(meanings: List<Meanings>): String {
     var meaningsSeparatedByComma = String()

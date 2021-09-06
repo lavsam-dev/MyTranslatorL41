@@ -1,9 +1,9 @@
-package geekbrains.ru.translator.model.datasource
+package com.learn.lavsam.mytranslatorl41.model.datasource
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import geekbrains.ru.translator.model.data.DataModel
-import geekbrains.ru.translator.model.data.api.ApiService
-import geekbrains.ru.translator.model.data.api.BaseInterceptor
+import com.learn.lavsam.mytranslatorl41.model.data.DataModel
+import com.learn.lavsam.mytranslatorl41.model.data.api.ApiService
+import com.learn.lavsam.mytranslatorl41.model.data.api.BaseInterceptor
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

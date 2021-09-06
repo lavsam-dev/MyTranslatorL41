@@ -1,16 +1,16 @@
-package geekbrains.ru.translator.view.base
+package com.learn.lavsam.mytranslatorl41.view.base
 
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import geekbrains.ru.translator.R
-import geekbrains.ru.translator.model.data.AppState
-import geekbrains.ru.translator.model.data.DataModel
-import geekbrains.ru.translator.utils.network.isOnline
-import geekbrains.ru.translator.utils.ui.AlertDialogFragment
-import geekbrains.ru.translator.viewmodel.BaseViewModel
-import geekbrains.ru.translator.viewmodel.Interactor
+import com.learn.lavsam.mytranslatorl41.R
+import com.learn.lavsam.mytranslatorl41.model.data.AppState
+import com.learn.lavsam.mytranslatorl41.model.data.DataModel
+import com.learn.lavsam.mytranslatorl41.utils.network.isOnline
+import com.learn.lavsam.mytranslatorl41.utils.ui.AlertDialogFragment
+import com.learn.lavsam.mytranslatorl41.viewmodel.BaseViewModel
+import com.learn.lavsam.mytranslatorl41.viewmodel.Interactor
 import kotlinx.android.synthetic.main.loading_layout.*
 
 private const val DIALOG_FRAGMENT_TAG = "74a54328-5d62-46bf-ab6b-cbf5d8c79522"
@@ -40,7 +40,7 @@ abstract class BaseActivity<T : AppState, I : Interactor<T>> : AppCompatActivity
                 appState.data?.let {
                     if (it.isEmpty()) {
                         showAlertDialog(
-                            getString(R.string.dialog_tittle_sorry),
+                            getString(R.string.dialog_title_sorry),
                             getString(R.string.empty_server_response_on_success)
                         )
                     } else {

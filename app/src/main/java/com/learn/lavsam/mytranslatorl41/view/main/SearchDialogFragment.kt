@@ -1,4 +1,4 @@
-package geekbrains.ru.translator.view.main
+package com.learn.lavsam.mytranslatorl41.view.main
 
 import android.os.Bundle
 import android.text.Editable
@@ -10,8 +10,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.textfield.TextInputEditText
-import geekbrains.ru.translator.R
-import geekbrains.ru.translator.utils.getEmptyString
+import com.learn.lavsam.mytranslatorl41.R
+import com.learn.lavsam.mytranslatorl41.utils.getEmptyString
+
 import kotlinx.android.synthetic.main.search_dialog_fragment.*
 
 class SearchDialogFragment : BottomSheetDialogFragment() {

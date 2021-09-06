@@ -1,7 +1,6 @@
 package com.learn.lavsam.mytranslatorl41.model.repository
 
-import geekbrains.ru.translator.model.data.AppState
-import geekbrains.ru.translator.model.repository.Repository
+import com.learn.lavsam.mytranslatorl41.model.data.AppState
 
 interface RepositoryLocal<T> : Repository<T> {
 

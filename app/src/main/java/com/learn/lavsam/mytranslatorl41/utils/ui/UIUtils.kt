@@ -1,8 +1,8 @@
-package geekbrains.ru.translator.utils.ui
+package com.learn.lavsam.mytranslatorl41.utils.ui
 
 import android.content.Context
 import androidx.appcompat.app.AlertDialog
-import geekbrains.ru.translator.R
+import com.learn.lavsam.mytranslatorl41.R
 
 fun getStubAlertDialog(context: Context): AlertDialog {
     return getAlertDialog(context, null, null)

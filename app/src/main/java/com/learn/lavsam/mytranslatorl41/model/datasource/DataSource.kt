@@ -1,4 +1,4 @@
-package geekbrains.ru.translator.model.datasource
+package com.learn.lavsam.mytranslatorl41.model.datasource
 
 interface DataSource<T> {
 

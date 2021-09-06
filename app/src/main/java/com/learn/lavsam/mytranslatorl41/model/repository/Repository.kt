@@ -1,4 +1,4 @@
-package geekbrains.ru.translator.model.repository
+package com.learn.lavsam.mytranslatorl41.model.repository
 
 interface Repository<T> {
 

@@ -2,10 +2,11 @@ package com.learn.lavsam.mytranslatorl41.view.history
 
 import android.os.Bundle
 import androidx.lifecycle.Observer
-import geekbrains.ru.translator.R
-import geekbrains.ru.translator.model.data.AppState
-import geekbrains.ru.translator.model.data.DataModel
-import geekbrains.ru.translator.view.base.BaseActivity
+import com.learn.lavsam.mytranslatorl41.R
+import com.learn.lavsam.mytranslatorl41.model.data.AppState
+import com.learn.lavsam.mytranslatorl41.model.data.DataModel
+import com.learn.lavsam.mytranslatorl41.view.base.BaseActivity
+
 import kotlinx.android.synthetic.main.activity_history.*
 import org.koin.android.viewmodel.ext.android.viewModel
 

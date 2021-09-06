@@ -1,4 +1,4 @@
-package geekbrains.ru.translator.model.data
+package com.learn.lavsam.mytranslatorl41.model.data
 
 sealed class AppState {
 

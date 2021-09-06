@@ -1,7 +1,7 @@
-package geekbrains.ru.translator.model.repository
+package com.learn.lavsam.mytranslatorl41.model.repository
 
-import geekbrains.ru.translator.model.data.DataModel
-import geekbrains.ru.translator.model.datasource.DataSource
+import com.learn.lavsam.mytranslatorl41.model.data.DataModel
+import com.learn.lavsam.mytranslatorl41.model.datasource.DataSource
 
 class RepositoryImplementation(private val dataSource: DataSource<List<DataModel>>) :
     Repository<List<DataModel>> {

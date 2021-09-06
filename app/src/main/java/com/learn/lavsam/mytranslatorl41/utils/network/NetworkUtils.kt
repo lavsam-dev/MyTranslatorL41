@@ -1,4 +1,4 @@
-package geekbrains.ru.translator.utils.network
+package com.learn.lavsam.mytranslatorl41.utils.network
 
 import android.content.Context
 import android.net.ConnectivityManager

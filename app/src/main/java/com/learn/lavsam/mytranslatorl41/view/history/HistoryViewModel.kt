@@ -1,9 +1,9 @@
 package com.learn.lavsam.mytranslatorl41.view.history
 
 import androidx.lifecycle.LiveData
-import geekbrains.ru.translator.model.data.AppState
-import geekbrains.ru.translator.utils.parseLocalSearchResults
-import geekbrains.ru.translator.viewmodel.BaseViewModel
+import com.learn.lavsam.mytranslatorl41.model.data.AppState
+import com.learn.lavsam.mytranslatorl41.utils.parseLocalSearchResults
+import com.learn.lavsam.mytranslatorl41.viewmodel.BaseViewModel
 import kotlinx.coroutines.launch
 
 class HistoryViewModel(private val interactor: HistoryInteractor) :

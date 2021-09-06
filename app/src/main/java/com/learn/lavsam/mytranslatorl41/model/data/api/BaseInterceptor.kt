@@ -1,4 +1,4 @@
-package geekbrains.ru.translator.model.data.api
+package com.learn.lavsam.mytranslatorl41.model.data.api
 
 import okhttp3.Interceptor
 import okhttp3.Response
@@ -34,7 +34,6 @@ class BaseInterceptor private constructor() : Interceptor {
         }
         return statusCode
     }
-
 
     enum class ServerResponseStatusCode {
         INFO,

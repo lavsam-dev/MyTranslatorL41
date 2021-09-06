@@ -1,11 +1,10 @@
-package geekbrains.ru.translator.model.datasource
+package com.learn.lavsam.mytranslatorl41.model.datasource
 
-import com.learn.lavsam.mytranslatorl41.model.datasource.DataSourceLocal
+import com.learn.lavsam.mytranslatorl41.model.data.AppState
+import com.learn.lavsam.mytranslatorl41.model.data.DataModel
 import com.learn.lavsam.mytranslatorl41.room.HistoryDao
-import geekbrains.ru.translator.model.data.AppState
-import geekbrains.ru.translator.model.data.DataModel
-import geekbrains.ru.translator.utils.convertDataModelSuccessToEntity
-import geekbrains.ru.translator.utils.mapHistoryEntityToSearchResult
+import com.learn.lavsam.mytranslatorl41.utils.convertDataModelSuccessToEntity
+import com.learn.lavsam.mytranslatorl41.utils.mapHistoryEntityToSearchResult
 
 class RoomDataBaseImplementation(private val historyDao: HistoryDao) :
     DataSourceLocal<List<DataModel>> {

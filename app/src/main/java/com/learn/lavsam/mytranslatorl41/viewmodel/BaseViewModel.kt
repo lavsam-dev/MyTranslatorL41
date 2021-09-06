@@ -1,8 +1,8 @@
-package geekbrains.ru.translator.viewmodel
+package com.learn.lavsam.mytranslatorl41.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import geekbrains.ru.translator.model.data.AppState
+import com.learn.lavsam.mytranslatorl41.model.data.AppState
 import kotlinx.coroutines.*
 
 abstract class BaseViewModel<T : AppState>(

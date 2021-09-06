@@ -1,4 +1,4 @@
-package geekbrains.ru.translator.utils.ui
+package com.learn.lavsam.mytranslatorl41.utils.ui
 
 import android.content.Context
 import android.util.AttributeSet
